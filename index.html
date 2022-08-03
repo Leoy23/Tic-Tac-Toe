@@ -1,1 +1,44 @@
-
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <title>Tic-Tac-Toe</title>
+    <link rel="stylesheet" href="styles.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <header>
+      <h1>TIC-<span id="tac-title">TAC-</span>TOE</h1>
+    </header>
+    <main>
+      <img class="background" src="assets/mario-background.jpg" alt="super mario castle" />
+      <section class="left-player-one" id="left-player">
+        <article class="left-side">
+          <img class="player-1" src="assets/icons8-super-mario.svg" alt="" />
+          <h2 class="number-of-wins" id="number-of-wins">0 wins</h2>
+        </article>
+      </section>
+      <section id="game">
+        <h1 class="game-status">It's \'s turn</h1>
+        <div class="box-space1" data-value="0"></div>
+        <div class="box-space1" data-value="1"></div>
+        <div class="box-space1" data-value="2"></div>
+        <div class="box-space1" data-value="3"></div>
+        <div class="box-space1" data-value="4"></div>
+        <div class="box-space1" data-value="5"></div>
+        <div class="box-space1" data-value="6"></div>
+        <div class="box-space1" data-value="7"></div>
+        <div class="box-space1" data-value="9"></div>
+      </section>
+      <section class="right-player-two" id="right-player"
+        <article class="right-side">
+          <img class="player-1" src="assets/icons8-luigi.svg" alt="" />
+          <h2 class="number-of-wins" id="number-of-wins">0 wins</h2>
+        </article>
+    </section>
+    </main>
+    <script type="text/javascript" src="player.js"></script>
+    <script type="text/javascript" src="game.js"></script>
+    <script type="text/javascript" src="main.js"></script>
+  </body>
+</html>
