@@ -1,5 +1,24 @@
 class Game {
-  constructor() {
+  constructor () {
+    this.playerOne = new Player('one', 'x');
+    this.playerTwo = new Player('two', 'o');
+  }
+  trackBoardData () {
+
+  }
+  changeTurns () {
+    if (this.playerOne === )
+    // need to start
+  }
+
+  trackWins () {
+
+  }
+  detectDraw () {
+
+  }
+
+  resetGrid () {
 
   }
 }
