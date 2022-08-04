@@ -1,9 +1,6 @@
 /* ***** MAIN LAYOUT ***** */
 
 * {
-  /* border: 1px;
-  border-color: #D91818;
-  border-style: solid; */
   font-family: 'Righteous', cursive;
 }
 
@@ -18,6 +15,19 @@ body {
   width: 100vw;
   margin: 0;
 }
+
+/* ***** FONT COLORS & BACKGROUND COLORS ***** */
+
+.player-space {
+  background-color: transparent;
+}
+
+h1,
+.game-status-message {
+  color: #FFFFFF;
+}
+
+/* ***** GAME LAYOUT ***** */
 
 .player-space {
   display: flex;
@@ -84,19 +94,6 @@ h1,
   text-shadow: 2px 2px 5px white;
   font-size: 100px;
 }
-
-/* ***** FONT COLORS & BACKGROUND COLORS ***** */
-
-.player-space {
-  background-color: transparent;
-}
-
-h1,
-.game-status-message {
-  color: #FFFFFF;
-}
-
-/* ***** GAME LAYOUT ***** */
 
 .game {
   display: grid;
