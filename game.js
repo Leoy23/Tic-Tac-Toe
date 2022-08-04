@@ -8,18 +8,24 @@ class Game {
   }
   changeTurns () {
     if (this.playerOne === )
-    // need to start
+    // need to declare a player one
+    // need a player to start (how to delclare?)
   }
 
   trackWins () {
-
+    // Create a(n) array(s) of possible winning solutions?
+    // set conditionals for probable solutions
+    // returning string of "player _ wins!"
+    // need to add wins to each player's board (updates # of wins)
   }
   detectDraw () {
 
   }
 
   resetGrid () {
-
+    // set a conditional so that once a win is declared,
+    // the game board resets, need to call on the trackWins() fxn
+    // to update scores and tally, then clear out (change innerHTML) 
   }
 }
 
