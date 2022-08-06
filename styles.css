@@ -5,16 +5,22 @@
 }
 
 body {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
   background-image: url("./assets/mario-luigi.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: row-reverse;
   height: 100vh;
   width: 100vw;
+
   margin: 0;
 }
+
+.hidden {
+  display: none !important;
+}
+
 
 /* ***** FONT COLORS & BACKGROUND COLORS ***** */
 
@@ -68,8 +74,8 @@ h1,
   margin-bottom: auto;
 }
 
-.player-1,
-.player-2 {
+.luigi-first-player,
+.mario-second-player {
   display: flex;
   height: 150px;
   width: 150px;
@@ -91,12 +97,15 @@ h1,
 }
 
 .title {
+  display: flex;
+  justify-content: center;
   text-shadow: 15px 15px 25px #DC7179;
   font-size: 100px;
 }
 
 .game {
   display: grid;
+  justify-content: center;
   grid-template-columns: 175px 175px 175px;
   grid-template-rows: 175px 175px 175px;
   margin-top: 10px;
@@ -104,7 +113,7 @@ h1,
   border: 3px solid #E3838F;
 }
 .space {
-  display: flex;
+  display: grid;
   justify-content: center;
   border-top: 2px solid #DA8A97;
   border-bottom: 2px solid #DA8A97;
