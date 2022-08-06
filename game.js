@@ -1,36 +1,50 @@
 class Game {
-  constructor () {
+  constructor() {
     this.playerOne = new Player('one', 'x');
     this.playerTwo = new Player('two', 'o');
     this.gameBoard = ["", "", "", "", "", "", "", "", ""];
     this.startingPlayer = this.playerOne;
-
   }
 
-
-  trackBoardData () {
-
-  }
-  changeTurns () {
-    if (this.startingPlayer == this.playerOne) {
+  changeTurns() {
+    if (this.startingPlayer === this.playerOne) {
       this.startingPlayer = this.playerTwo
-    } else if (this.startingPlayer == this.playerTwo) {
+    } else if (this.startingPlayer === this.playerTwo) {
       this.startingPlayer = this.playerOne
     }
   }
 
-  trackWins () {
+  trackBoardData(anyIndex) {
+    if (this.gameBoard[anyIndex] === "") {
+      if (this.startingPlayer === this.playerOne) {
+        this.gameBoard[anyIndex] = this.playerOne.token
+        this.changeTurns();
+      } else if (this.startingPlayer === this.playerTwo) {
+        this.gameBoard[anyIndex] = this.playerTwo.token
+        this.changeTurns();
+      }
+    }
+  }
+
+
+ // when a player selects a space on the board (an index of the gameBoard array)
+ // space on gameBoard is filled with corresponding player's token (x or o)
+ // space becomes unavailable to next player
+ // need to invoke a function looks for winning conditions
+
+
+  trackWins() {
 
     // Create a(n) array(s) of possible winning solutions?
     // set conditionals for probable solutions
     // returning string of "player _ wins!"
     // need to add wins to each player's board (updates # of wins)
   }
-  detectDraw () {
+  detectDraw() {
 
   }
 
-  resetGrid () {
+  resetGrid() {
     // set a conditional so that once a win is declared,
     // the game board resets, need to call on the trackWins() fxn
     // to update scores and tally, then clear out (change innerHTML)
