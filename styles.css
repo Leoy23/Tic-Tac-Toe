@@ -47,27 +47,16 @@ h1,
   height: 100vh;
 }
 
-.player-one-score {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 35%;
-  width: 115%;
-  background: #D96067;
-  border-radius: 185px;
-  opacity: 0.9;
-}
-
+.player-one-score,
 .player-two-score {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 35%;
+  height: 25%;
   width: 115%;
   background: #D96067;
-  border-radius: 185px;
+  border-radius: 200px;
   opacity: 0.9;
 }
 
@@ -81,7 +70,6 @@ h1,
 
 .luigi-first-player,
 .mario-second-player {
-  display: flex;
   height: 150px;
   width: 150px;
 }
