@@ -76,21 +76,18 @@ class Game {
       this.playerTwo.increaseWins();
       this.setStartingPlayer();
     }
+    this.resetGrid();
   }
 
   detectDraw() {
     if (!this.gameBoard.includes("")) {
       console.log("draw!")
+      this.resetGrid();
     }
   }
 
   resetGrid() {
-    this.gameBoard = ["", "", "", "", "", "", "", "", ""];]
-
-    // set a conditional so that once a win is declared,
-    // the game board resets, need to call on the trackWins() fxn
+    this.gameBoard = ["", "", "", "", "", "", "", "", ""];
+    this.setStartingPlayer();
   }
 }
-
-
-// A way to reset the Game’s board to begin a new game
