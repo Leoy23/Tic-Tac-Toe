@@ -27,47 +27,50 @@ class Game {
     this.trackWins();
   }
 
- // when a player selects a space on the board (an index of the gameBoard array)
- // space on gameBoard is filled with corresponding player's token (x or o)
- // space becomes unavailable to next player
- // need to invoke a function looks for winning conditions
-
 
   trackWins() {
-    var wins = [
-// Create array(s) of possible winning solutions?
-      // Horizontal Win //
-        ['0', '1', '2'],
-        ['3', '4', '5'],
-        ['6', '7', '8']
-      // Vertical Win //
-        ['0', '3', '6'],
-        ['1', '4', '7'],
-        ['2', '5', '8']
-      // Diagonal Win //
-        ['2', '4', '6'],
-        ['0', '4', '8']
-    ]
-// set conditionals for probable solutions
-// need to be dynamic - they will apply to both players
-// need a conditional to loop through the gameBoard array & wins array?
-// need to be able to compare the gameBoard with the winning solutions
-      if () {
-        return 'Winner!'
-      }
+    // horizontal wins
+    if (this.gameBoard[0] === this.gameBoard[1] && this.gameBoard[1] === this.gameBoard[2] && this.gameBoard[2] === this.gameBoard[0] !== "") {
+      console.log("winner!")
+    }
+    else if (this.gameBoard[3] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[5] && this.gameBoard[5] === this.gameBoard[3] !== "") {
+      console.log("winner!")
+    }
+    else if (this.gameBoard[6] === this.gameBoard[7] && this.gameBoard[7] === this.gameBoard[8] && this.gameBoard[8] === this.gameBoard[6] !== "") {
+      console.log("winner!")
+    }
+    // vertical wins
+    else if (this.gameBoard[0] === this.gameBoard[3] && this.gameBoard[3] === this.gameBoard[6] && this.gameBoard[6] === this.gameBoard[0] !== "") {
+      console.log("winner!")
+    }
+    else if (this.gameBoard[1] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[7] && this.gameBoard[7] === this.gameBoard[1] !== "") {
+      console.log("winner!")
+    }
+    else if (this.gameBoard[2] === this.gameBoard[5] && this.gameBoard[5] === this.gameBoard[8] && this.gameBoard[8] === this.gameBoard[2] !== "") {
+      console.log("winner!")
+    }
+    // diagonal wins
+    else if (this.gameBoard[2] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[6] && this.gameBoard[6] === this.gameBoard[2] !== "") {
+      console.log("winner!")
+    }
+    else if (this.gameBoard[0] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[8] && this.gameBoard[8] === this.gameBoard[0] !== "") {
+      console.log("winner!")
+    } else {
+      this.detectDraw();
+    }
   }
 
-    // returning string of "player _ wins!"
-    // need to add wins to each player's board (updates # of wins)
+  displayWinner() {
 
+  }
 
+  detectDraw(indexes) {
+    if (this.gameBoard[indexes] !== "" ) {
+      console.log("draw!")
+    }
 
+  }
 
-
-  // detectDraw() {
-  //
-  // }
-  //
   // resetGrid() {
   //   // set a conditional so that once a win is declared,
   //   // the game board resets, need to call on the trackWins() fxn
