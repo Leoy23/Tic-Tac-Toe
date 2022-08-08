@@ -2,12 +2,6 @@
 
 * {
   font-family: 'Righteous', cursive;
-}
-*,
-*:before,
-*:after {
-
-}
 
 body {
   display: flex;
