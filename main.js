@@ -26,5 +26,4 @@ function playTheGame() {
       }
     }
     console.log(event.target.id)
-    console.log("Is this working?")
   }
