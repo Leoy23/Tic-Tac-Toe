@@ -17,13 +17,32 @@ function playTheGame() {
   for (var i = 0; i < gameGridSpaces[i].length; i++) {
     if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces.innerHTML === "") {
         gameGridSpaces[i].innerHTML = `
-        <h1>${ticTacToe.playerOne.token}</h1>
+        <div class="player-one-score"></div>
         `
       } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces.innerHTML === "") {
         gameGridSpaces[i].innerHTML = `
-        <h1>${ticTacToe.playerTwo.token}</h1>
+        <div>${ticTacToe.playerTwo.token}</div>
         `
       }
     }
     console.log(event.target.id)
   }
+
+ function displayWinner() {
+
+ }
+
+function displayActiveWinner() {
+
+}
+
+function updatePlayerWins() {
+
+}
+
+function displayDraw() {
+
+}
+function restartGame() {
+
+}
