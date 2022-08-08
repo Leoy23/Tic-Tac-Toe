@@ -13,27 +13,28 @@ var ticTacToe = new Game();
 
  // FUNCTIONS //
 
-function playTheGame() {
-  for (var i = 0; i < gameGridSpaces[i].length; i++) {
-    if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces.innerHTML === "") {
-        gameGridSpaces[i].innerHTML = `
-        <div class="player-one-score"></div>
-        `
-      } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces.innerHTML === "") {
-        gameGridSpaces[i].innerHTML = `
-        <div>${ticTacToe.playerTwo.token}</div>
-        `
+function playTheGame(event) {
+  show(displayPlayerTurn);
+  for (var i = 0; i < gameGridSpaces.length; i++) {
+    if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces[i].innerText === "") {
+        gameGridSpaces[i].innerHTML += 'X'
+        ticTacToe.trackBoardData([i]);
+      } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces[i].innerText === "") {
+        gameGridSpaces[i].innerHTML += 'O'
+        ticTacToe.trackBoardData([i]);
       }
     }
-    console.log(event.target.id)
+    ticTacToe.checkForWin();
+    ticTacToe.updateActivePlayer();
+    displayActivePlayer();
   }
 
  function displayWinner() {
 
  }
 
-function displayActiveWinner() {
-
+function displayActivePlayer() {
+  displayPlayerTurn.innerText = `It's ${ticTacToe.activePlayer.id} 's turn!`
 }
 
 function updatePlayerWins() {
@@ -46,3 +47,26 @@ function displayDraw() {
 function restartGame() {
 
 }
+
+// set timeout - 5000
+
+
+
+// function playTheGame(event) {
+//   for (var i = 0; i < gameGridSpaces.length; i++) {
+//     if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces.innerHTML === "") {
+//         gameGridSpaces[i].innerHTML += 'X'
+//         console.log('special message!')
+//       } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces.innerHTML === "") {
+//         gameGridSpaces[i].innerHTML += 'O'
+//       }
+//     }
+//   }
+
+function hide(element) {
+    element.classList.add('hidden');
+  }
+
+  function show(element) {
+    element.classList.remove('hidden');
+  }
