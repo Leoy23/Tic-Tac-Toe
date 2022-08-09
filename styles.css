@@ -80,6 +80,7 @@ h1,
 h1,
 .game-status-message {
   font-size: 3em;
+  text-shadow: 15px 15px 25px #DA8A97;
 }
 
 .main-game-container {
@@ -95,7 +96,7 @@ h1,
   display: flex;
   justify-content: center;
   text-shadow: 15px 15px 25px #DC7179;
-  font-size: 100px;
+  font-size: 90px;
 }
 
 .game {
