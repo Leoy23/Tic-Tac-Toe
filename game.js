@@ -71,11 +71,9 @@ class Game {
   win() {
     if (this.activePlayer === this.playerOne) {
       this.playerOne.increaseWins();
-      this.setStartingPlayer();
     }
     if (this.activePlayer === this.playerTwo) {
       this.playerTwo.increaseWins();
-      this.setStartingPlayer();
     }
     this.resetGrid();
   }
