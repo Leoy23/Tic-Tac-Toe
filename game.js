@@ -5,6 +5,7 @@ class Game {
     this.gameBoard = ["", "", "", "", "", "", "", "", ""];
     this.startingPlayer = this.playerOne;
     this.activePlayer = this.startingPlayer;
+    this.draw = false;
   }
 
   setStartingPlayer() {
@@ -80,7 +81,7 @@ class Game {
 
   detectDraw() {
     if (!this.gameBoard.includes("")) {
-      console.log("draw!")
+      this.draw = true;
       this.resetGrid();
     }
   }
@@ -88,5 +89,6 @@ class Game {
   resetGrid() {
     this.gameBoard = ["", "", "", "", "", "", "", "", ""];
     this.setStartingPlayer();
+    this.draw = false;
   }
 }

@@ -30,6 +30,7 @@ function playTheGame(event) {
     displayActivePlayer();
     displayWinner();
     updatePlayerWins();
+    displayDraw();
   }
 
  function displayWinner() {
@@ -55,8 +56,12 @@ function updatePlayerWins() {
 }
 
 function displayDraw() {
-
+  if (ticTacToe.draw === true) {
+    gameStatus.innerText = 'Tie!'
+  }
 }
+
+
 function restartGame() {
 
 }
