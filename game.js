@@ -10,8 +10,8 @@ class Game {
   }
 
   setStartingPlayer() {
-    if (this.startingPlayer === this.playerOne) {
-      this.startingPlayer = this.playerTwo
+   if (this.startingPlayer === this.playerOne) {
+        this.startingPlayer = this.playerTwo
     } else if (this.startingPlayer === this.playerTwo) {
       this.startingPlayer = this.playerOne
     }
@@ -26,7 +26,7 @@ class Game {
   }
 
   trackBoardData(anyIndex) {
-    if (this.gameBoard[anyIndex] === "") {
+    if (this.gameBoard[anyIndex] === '') {
       if (this.activePlayer === this.playerOne) {
         this.gameBoard[anyIndex] = this.playerOne.token
       }
@@ -38,31 +38,21 @@ class Game {
 
   checkForWin() {
     for (var i = 0; i < this.gameBoard.length; i++) {
-      // horizontal wins
       if (this.gameBoard[0] === this.gameBoard[1] && this.gameBoard[1] === this.gameBoard[2] && this.gameBoard[2] !== "") {
         this.win();
-      }
-      else if (this.gameBoard[3] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[5] && this.gameBoard[5] !== "") {
+      } else if (this.gameBoard[3] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[5] && this.gameBoard[5] !== "") {
         this.win();
-      }
-      else if (this.gameBoard[6] === this.gameBoard[7] && this.gameBoard[7] === this.gameBoard[8] && this.gameBoard[8] !== "") {
+      } else if (this.gameBoard[6] === this.gameBoard[7] && this.gameBoard[7] === this.gameBoard[8] && this.gameBoard[8] !== "") {
         this.win();
-      }
-      // vertical wins
-      else if (this.gameBoard[0] === this.gameBoard[3] && this.gameBoard[3] === this.gameBoard[6] && this.gameBoard[6] !== "") {
+      } else if (this.gameBoard[0] === this.gameBoard[3] && this.gameBoard[3] === this.gameBoard[6] && this.gameBoard[6] !== "") {
         this.win();
-      }
-      else if (this.gameBoard[1] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[7] && this.gameBoard[7] !== "") {
+      } else if (this.gameBoard[1] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[7] && this.gameBoard[7] !== "") {
         this.win();
-      }
-      else if (this.gameBoard[2] === this.gameBoard[5] && this.gameBoard[5] === this.gameBoard[8] && this.gameBoard[8] !== "") {
+      } else if (this.gameBoard[2] === this.gameBoard[5] && this.gameBoard[5] === this.gameBoard[8] && this.gameBoard[8] !== "") {
         this.win()
-      }
-      // diagonal wins
-      else if (this.gameBoard[2] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[6] && this.gameBoard[6] !== "") {
+      } else if (this.gameBoard[2] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[6] && this.gameBoard[6] !== "") {
         this.win();
-      }
-      else if (this.gameBoard[0] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[8] && this.gameBoard[8] !== "") {
+      } else if (this.gameBoard[0] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[8] && this.gameBoard[8] !== "") {
         this.win();
       } else {
         this.detectDraw();
