@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.playerOne = new Player('playerOne', 'x');
-    this.playerTwo = new Player('playerTwo', 'o');
+    this.playerOne = new Player('Luigi', 'x');
+    this.playerTwo = new Player('Mario', 'o');
     this.gameBoard = ["", "", "", "", "", "", "", "", ""];
     this.startingPlayer = this.playerOne;
     this.activePlayer = this.startingPlayer;

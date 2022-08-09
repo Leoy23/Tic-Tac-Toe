@@ -34,7 +34,7 @@ function playTheGame(event) {
  }
 
 function displayActivePlayer() {
-  displayPlayerTurn.innerText = `It's ${ticTacToe.activePlayer.id} 's turn!`
+  displayPlayerTurn.innerText = `It's ${ticTacToe.activePlayer.id}'s turn!`
 }
 
 function updatePlayerWins() {
