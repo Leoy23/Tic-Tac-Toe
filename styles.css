@@ -33,6 +33,14 @@ h1,
   color: #FFFFFF;
 }
 
+.main-game-container {
+  background-color: transparent;
+}
+
+.space {
+  background-color: #DC7179;
+}
+
 /* ***** GAME LAYOUT ***** */
 
 .player-space {
@@ -72,6 +80,7 @@ h1,
 h1,
 .game-status-message {
   font-size: 3em;
+  text-shadow: 15px 15px 25px #DA8A97;
 }
 
 .main-game-container {
@@ -81,14 +90,13 @@ h1,
   align-items: center;
   width: 60%;
   height: 100%;
-  background-color: transparent;
 }
 
 .title {
   display: flex;
   justify-content: center;
   text-shadow: 15px 15px 25px #DC7179;
-  font-size: 100px;
+  font-size: 90px;
 }
 
 .game {
@@ -107,6 +115,5 @@ h1,
   border-bottom: 2px solid #DA8A97;
   border-left: 2px solid #DA8A97;
   border-right: 2px solid #DA8A97;
-  background-color: #DC7179;
   opacity: 0.8;
 }
