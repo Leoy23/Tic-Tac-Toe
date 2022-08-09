@@ -15,23 +15,23 @@ var ticTacToe = new Game();
  // FUNCTIONS //
 
 function playTheGame(event) {
-  show(displayPlayerTurn);
+ show(displayPlayerTurn);
   for (var i = 0; i < gameGridSpaces.length; i++) {
     if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces[i].innerText === "") {
-        gameGridSpaces[i].innerHTML += `<img class="luigi-first-player" src="assets/icons8-luigi.svg" alt="luigi icon" />`
-        ticTacToe.trackBoardData([i]);
-      } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces[i].innerText === "") {
-        gameGridSpaces[i].innerHTML += `<img class="mario-second-player" src="assets/icons8-super-mario.svg" alt="super mario icon" />`
-        ticTacToe.trackBoardData([i]);
-      }
-    }
-    ticTacToe.checkForWin();
-    ticTacToe.updateActivePlayer();
-    displayActivePlayer();
-    displayWinner();
-    updatePlayerWins();
-    displayDraw();
+      gameGridSpaces[i].innerHTML += `<img class="luigi-first-player" src="assets/icons8-luigi.svg" alt="luigi icon" />`
+      ticTacToe.trackBoardData([i]);
+  } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces[i].innerText === "") {
+     gameGridSpaces[i].innerHTML += `<img class="mario-second-player" src="assets/icons8-super-mario.svg" alt="super mario icon" />`
+     ticTacToe.trackBoardData([i]);
   }
+}
+  ticTacToe.checkForWin();
+  ticTacToe.updateActivePlayer();
+  displayActivePlayer();
+  displayWinner();
+  updatePlayerWins();
+  displayDraw();
+}
 
  function displayWinner() {
    if (ticTacToe.winner === ticTacToe.playerOne) {
