@@ -5,6 +5,8 @@ class Game {
     this.gameBoard = ["", "", "", "", "", "", "", "", ""];
     this.startingPlayer = this.playerOne;
     this.activePlayer = this.startingPlayer;
+    this.draw = false;
+    this.winner = null;
   }
 
   setStartingPlayer() {
@@ -71,16 +73,18 @@ class Game {
   win() {
     if (this.activePlayer === this.playerOne) {
       this.playerOne.increaseWins();
+      this.winner = this.playerOne;
     }
     if (this.activePlayer === this.playerTwo) {
       this.playerTwo.increaseWins();
+      this.winner = this.playerTwo;
     }
     this.resetGrid();
   }
 
   detectDraw() {
     if (!this.gameBoard.includes("")) {
-      console.log("draw!")
+      this.draw = true;
       this.resetGrid();
     }
   }
