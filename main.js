@@ -17,10 +17,10 @@ function playTheGame(event) {
   show(displayPlayerTurn);
   for (var i = 0; i < gameGridSpaces.length; i++) {
     if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces[i].innerText === "") {
-        gameGridSpaces[i].innerHTML += 'X'
+        gameGridSpaces[i].innerHTML += `<img class="luigi-first-player" src="assets/icons8-luigi.svg" alt="luigi icon" />`
         ticTacToe.trackBoardData([i]);
       } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces[i].innerText === "") {
-        gameGridSpaces[i].innerHTML += 'O'
+        gameGridSpaces[i].innerHTML += `<img class="mario-second-player" src="assets/icons8-super-mario.svg" alt="super mario icon" />`
         ticTacToe.trackBoardData([i]);
       }
     }
