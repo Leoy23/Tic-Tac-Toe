@@ -29,6 +29,7 @@ function playTheGame(event) {
     ticTacToe.updateActivePlayer();
     displayActivePlayer();
     displayWinner();
+    updatePlayerWins();
   }
 
  function displayWinner() {
@@ -45,7 +46,12 @@ function displayActivePlayer() {
 }
 
 function updatePlayerWins() {
-
+  firstPlayerScore.innerHTML = `
+    <h1>${ticTacToe.playerOne.wins}</h1>
+  `
+  secondPlayerScore.innerHTML = `
+    <h1>${ticTacToe.playerTwo.wins}</h1>
+  `
 }
 
 function displayDraw() {
