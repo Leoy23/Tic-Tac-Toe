@@ -1,21 +1,31 @@
+
 # Tic-Tac-Toe
 
 ## Overview:
- Tic-Tac-Toe is a classic two-player game with a goal of getting three X's or O's in a row in order to win. Utilizing HTML, CSS and JavaScript, I was able to create a fun game featuring two fan favorite's, Mario and Luigi.
+
+Utilizing HTML, CSS and JavaScript, I was able to create a fun game of Tic-Tac-Toe featuring two fan favorite's, Mario and Luigi!
 
 ## Setup
-1. Fork and clone this repo to your local machine
-2. Type "cd Tic-Tac-Toe" to switch into the root directory
-3. From there, type "open index.html" to load the game webpage and begin playing!
+
+1. Clone this repo down to your local machine
+2. In the terminal, type `cd Tic-Tac-Toe` to switch into the root directory
+3. From there, type `open index.html` to load the game in your browser and begin playing!
 
 ## Game Instructions
+
 1. Declare one person "Player 1" or "Luigi" and another person "Player 2" or "Mario"
-2. "Player 1" will click a square on the board, marking their first move
-3. "Player 2" will then click on any of the unselected squares to initiate their first move
-4. Both players should attempt to get three of their characters in a row in order to win
-5. Once a player wins, the game will automatically reset for players to begin again!
+2. "Player 1" will click any empty square on the board to begin
+3. "Player 2" will then select any remaining empty square to make their move
+4. Both players will continue taking turns placing their tokens in empty spaces until a win is declared === three of a player's tokens are in a row (horizontally, vertically, or diagonally)
+5. When a game is won, the winning player's scoreboard will increase by one and the game will restart after a few seconds. Player two will then begin the next game
+6. If neither player wins, a `tie` will be declared, neither of the player's scores will increase and the game will restart
 
-## Screenshots of functioning app
+# ENJOY!
+
+![Mario and Luigi Tic-Tac-Toe game](./assets/Tic-Tac-Toe-home.png)
 
 
-<!-- note to self for tomorrow, make sure to switch player one = luigi and player two = mario within the HTML file -->
+---------
+
+
+![Mario and Luigi Tic-Tac-Toe game](./assets/Tic-Tac-Toe-game.png)
