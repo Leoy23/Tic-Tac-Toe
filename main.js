@@ -34,11 +34,12 @@ function playTheGame(event) {
   }
 
  function displayWinner() {
-   if (ticTacToe.playerOne.wins > ticTacToe.playerTwo.wins) {
-     console.log("winner!")
+   if (ticTacToe.winner === ticTacToe.playerOne) {
      gameStatus.innerText = `${ticTacToe.playerOne.id} wins!`
-   } else if ( ticTacToe.playerTwo.wins > ticTacToe.playerOne.wins) {
+     timer();
+   } else if (ticTacToe.winner === ticTacToe.playerTwo) {
      gameStatus.innerText = `${ticTacToe.playerTwo.id} wins!`
+     timer();
    }
  }
 
@@ -58,16 +59,24 @@ function updatePlayerWins() {
 function displayDraw() {
   if (ticTacToe.draw === true) {
     gameStatus.innerText = 'Tie!'
+    timer();
   }
 }
 
-
 function restartGame() {
-
+  for (var i = 0; i < gameGridSpaces.length; i++) {
+    gameGridSpaces[i].innerHTML = ``
+    gameStatus.innerText = ""
+    ticTacToe.draw = false;
+    ticTacToe.winner = null;
+  }
 }
 
-// set timeout - 5000
-
+function timer() {
+  setTimeout(function() {
+    restartGame();
+  }, 2000);
+}
 
 
 function hide(element) {
