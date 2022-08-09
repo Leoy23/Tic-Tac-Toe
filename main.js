@@ -1,9 +1,9 @@
 // QUERYSELECTORS //
-var gameGrid = document.querySelector('.main-game-container')
+var gameGrid = document.querySelector('.game')
 var displayPlayerTurn = document.querySelector('.players-turn')
 var firstPlayerScore = document.querySelector('.player-one-score')
 var secondPlayerScore = document. querySelector('.player-two-score')
-var gameGridSpaces = document.querySelectorAll('.spaces')
+var gameGridSpaces = document.querySelectorAll('.space')
 
 // EVENT LISTENERS //
 gameGrid.addEventListener('click', playTheGame)
@@ -13,14 +13,60 @@ var ticTacToe = new Game();
 
  // FUNCTIONS //
 
-playTheGame() {
-  for (var i = 0; i < gameGridSpaces[i].length; i++) {
-    if (gameGridSpaces[i].id === event.target.id && ticTacToe.activePlayer === ticTacToe.playerOne &&
-      gameGridSpaces.innerHTML = "") {
-        gameGridSpaces[i].innerHTML = `
-        <h1>${ticTacToe.playerOne.token}</h1>
-        `
+function playTheGame(event) {
+  show(displayPlayerTurn);
+  for (var i = 0; i < gameGridSpaces.length; i++) {
+    if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces[i].innerText === "") {
+        gameGridSpaces[i].innerHTML += 'X'
+        ticTacToe.trackBoardData([i]);
+      } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces[i].innerText === "") {
+        gameGridSpaces[i].innerHTML += 'O'
+        ticTacToe.trackBoardData([i]);
+      }
     }
-    // will need multiple conditions
+    ticTacToe.checkForWin();
+    ticTacToe.updateActivePlayer();
+    displayActivePlayer();
   }
+
+ function displayWinner() {
+
+ }
+
+function displayActivePlayer() {
+  displayPlayerTurn.innerText = `It's ${ticTacToe.activePlayer.id}'s turn!`
 }
+
+function updatePlayerWins() {
+
+}
+
+function displayDraw() {
+
+}
+function restartGame() {
+
+}
+
+// set timeout - 5000
+
+
+
+// function playTheGame(event) {
+//   for (var i = 0; i < gameGridSpaces.length; i++) {
+//     if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces.innerHTML === "") {
+//         gameGridSpaces[i].innerHTML += 'X'
+//         console.log('special message!')
+//       } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces.innerHTML === "") {
+//         gameGridSpaces[i].innerHTML += 'O'
+//       }
+//     }
+//   }
+
+function hide(element) {
+    element.classList.add('hidden');
+  }
+
+  function show(element) {
+    element.classList.remove('hidden');
+  }

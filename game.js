@@ -1,7 +1,7 @@
 class Game {
   constructor() {
-    this.playerOne = new Player('one', 'x');
-    this.playerTwo = new Player('two', 'o');
+    this.playerOne = new Player('Luigi', 'x');
+    this.playerTwo = new Player('Mario', 'o');
     this.gameBoard = ["", "", "", "", "", "", "", "", ""];
     this.startingPlayer = this.playerOne;
     this.activePlayer = this.startingPlayer;
@@ -32,38 +32,46 @@ class Game {
         this.gameBoard[anyIndex] = this.playerTwo.token
       }
     }
-    this.checkForWin();
-    this.updateActivePlayer();
   }
 
   checkForWin() {
-    // horizontal wins
-    if (this.gameBoard[0] === this.gameBoard[1] && this.gameBoard[1] === this.gameBoard[2] && this.gameBoard[2] !== "") {
-      this.win();
-    }
-    else if (this.gameBoard[3] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[5] && this.gameBoard[5] !== "") {
-      this.win();
-    }
-    else if (this.gameBoard[6] === this.gameBoard[7] && this.gameBoard[7] === this.gameBoard[8] && this.gameBoard[8] !== "") {
-      this.win();
-    }
-    // vertical wins
-    else if (this.gameBoard[0] === this.gameBoard[3] && this.gameBoard[3] === this.gameBoard[6] && this.gameBoard[6] !== "") {
-      this.win();
-    }
-    else if (this.gameBoard[1] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[7] && this.gameBoard[7] !== "") {
-      this.win();
-    }
-    else if (this.gameBoard[2] === this.gameBoard[5] && this.gameBoard[5] === this.gameBoard[8] && this.gameBoard[8] !== "") {
-      this.win();    }
-    // diagonal wins
-    else if (this.gameBoard[2] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[6] && this.gameBoard[6] !== "") {
-      this.win();
-    }
-    else if (this.gameBoard[0] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[8] && this.gameBoard[8] !== "") {
-      this.win();
-    } else {
-      this.detectDraw();
+    for (var i = 0; i < this.gameBoard.length; i++) {
+      // horizontal wins
+      if (this.gameBoard[0] === this.gameBoard[1] && this.gameBoard[1] === this.gameBoard[2] && this.gameBoard[2] !== "") {
+        console.log('winner!')
+        this.win();
+      }
+      else if (this.gameBoard[3] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[5] && this.gameBoard[5] !== "") {
+        this.win();
+        console.log('winner!')
+      }
+      else if (this.gameBoard[6] === this.gameBoard[7] && this.gameBoard[7] === this.gameBoard[8] && this.gameBoard[8] !== "") {
+        this.win();
+        console.log('winner!')
+      }
+      // vertical wins
+      else if (this.gameBoard[0] === this.gameBoard[3] && this.gameBoard[3] === this.gameBoard[6] && this.gameBoard[6] !== "") {
+        this.win();
+        console.log('winner!')
+      }
+      else if (this.gameBoard[1] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[7] && this.gameBoard[7] !== "") {
+        this.win();
+        console.log('winner!')
+      }
+      else if (this.gameBoard[2] === this.gameBoard[5] && this.gameBoard[5] === this.gameBoard[8] && this.gameBoard[8] !== "") {
+        this.win();
+        console.log('winner!')  }
+        // diagonal wins
+        else if (this.gameBoard[2] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[6] && this.gameBoard[6] !== "") {
+          this.win();
+          console.log('winner!')
+        }
+        else if (this.gameBoard[0] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[8] && this.gameBoard[8] !== "") {
+          this.win();
+          console.log('winner!')
+        } else {
+          this.detectDraw();
+        }
     }
   }
 
@@ -80,6 +88,7 @@ class Game {
   }
 
   detectDraw() {
+    console.log('draw')
     if (!this.gameBoard.includes("")) {
       console.log("draw!")
       this.resetGrid();
