@@ -4,6 +4,7 @@ var displayPlayerTurn = document.querySelector('.players-turn')
 var firstPlayerScore = document.querySelector('.player-one-score')
 var secondPlayerScore = document. querySelector('.player-two-score')
 var gameGridSpaces = document.querySelectorAll('.space')
+var gameStatus = document.querySelector('.game-status-message')
 
 // EVENT LISTENERS //
 gameGrid.addEventListener('click', playTheGame)
@@ -27,10 +28,16 @@ function playTheGame(event) {
     ticTacToe.checkForWin();
     ticTacToe.updateActivePlayer();
     displayActivePlayer();
+    displayWinner();
   }
 
  function displayWinner() {
-
+   if (ticTacToe.playerOne.wins > ticTacToe.playerTwo.wins) {
+     console.log("winner!")
+     gameStatus.innerText = `${ticTacToe.playerOne.id} wins!`
+   } else if ( ticTacToe.playerTwo.wins > ticTacToe.playerOne.wins) {
+     gameStatus.innerText = `${ticTacToe.playerTwo.id} wins!`
+   }
  }
 
 function displayActivePlayer() {
@@ -51,17 +58,6 @@ function restartGame() {
 // set timeout - 5000
 
 
-
-// function playTheGame(event) {
-//   for (var i = 0; i < gameGridSpaces.length; i++) {
-//     if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces.innerHTML === "") {
-//         gameGridSpaces[i].innerHTML += 'X'
-//         console.log('special message!')
-//       } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces.innerHTML === "") {
-//         gameGridSpaces[i].innerHTML += 'O'
-//       }
-//     }
-//   }
 
 function hide(element) {
     element.classList.add('hidden');
