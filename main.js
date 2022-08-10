@@ -3,7 +3,6 @@ var gameGrid = document.querySelector('.game')
 var displayPlayerTurn = document.querySelector('.players-turn')
 var firstPlayerScore = document.querySelector('.player-one-score')
 var secondPlayerScore = document. querySelector('.player-two-score')
-var gameStatus = document.querySelector('.game-status-message')
 var gameGridSpaces = document.querySelectorAll('.space')
 
 // EVENT LISTENERS //
@@ -13,7 +12,7 @@ gameGrid.addEventListener('click', playTheGame)
 var ticTacToe = new Game();
 
  // FUNCTIONS //
- 
+
 function playTheGame(event) {
   if (ticTacToe.activePlayer === ticTacToe.playerOne) {
     setToken(ticTacToe.playerOne.token, "luigi-first-player", "luigi icon", "Luigi", event);

@@ -18,18 +18,13 @@ body {
 }
 
 
-.hidden {
-  display: none !important;
-}
-
 /* ***** FONT COLORS & BACKGROUND COLORS ***** */
 
 .player-space {
   background-color: transparent;
 }
 
-h1,
-.game-status-message {
+h1 {
   color: #FFFFFF;
 }
 
@@ -77,8 +72,7 @@ h1,
   width: 150px;
 }
 
-h1,
-.game-status-message {
+h1 {
   font-size: 3em;
   text-shadow: 15px 15px 25px #DA8A97;
 }
