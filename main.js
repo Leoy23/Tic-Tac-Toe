@@ -4,7 +4,6 @@ var displayPlayerTurn = document.querySelector('.players-turn')
 var firstPlayerScore = document.querySelector('.player-one-score')
 var secondPlayerScore = document. querySelector('.player-two-score')
 var gameGridSpaces = document.querySelectorAll('.space')
-var gameStatus = document.querySelector('.game-status-message')
 
 // EVENT LISTENERS //
 gameGrid.addEventListener('click', playTheGame)
@@ -15,39 +14,52 @@ var ticTacToe = new Game();
  // FUNCTIONS //
 
 function playTheGame(event) {
-  show(displayPlayerTurn);
+  if (ticTacToe.activePlayer === ticTacToe.playerOne) {
+    setToken(ticTacToe.playerOne.token, "luigi-first-player", "luigi icon", "Luigi", event);
+  } else if (ticTacToe.activePlayer === ticTacToe.playerTwo) {
+    setToken(ticTacToe.playerTwo.token, "mario-second-player", "super mario icon", "Mario", event);
+  }
+    ticTacToe.trackBoardData(event.target.id);
+    show();
+    newWin();
+    updateWinCount();
+}
+
+function setToken(token, tokenClass, tokenAlt, id, event) {
+  var gameGridSpaces = document.querySelectorAll('.space')
   for (var i = 0; i < gameGridSpaces.length; i++) {
-    if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerOne && gameGridSpaces[i].innerText === "") {
-      gameGridSpaces[i].innerHTML += `<img class="luigi-first-player" src="assets/icons8-luigi.svg" alt="luigi icon" />`
-      ticTacToe.trackBoardData([i]);
-    } else if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer === ticTacToe.playerTwo && gameGridSpaces[i].innerText === "") {
-       gameGridSpaces[i].innerHTML += `<img class="mario-second-player" src="assets/icons8-super-mario.svg" alt="super mario icon" />`
-       ticTacToe.trackBoardData([i]);
+    if (event.target.id === gameGridSpaces[i].id && ticTacToe.activePlayer.id === id) {
+      gameGridSpaces[i].innerHTML += `<img class=${tokenClass} src=${token} alt=${tokenAlt} />`
     }
   }
-    ticTacToe.checkForWin();
-    ticTacToe.updateActivePlayer();
-    displayActivePlayer();
-    displayWinner();
-    updatePlayerWins();
+}
+
+function displayWinner(player) {
+  displayPlayerTurn.innerText = `${player} wins!`
+  gameGrid.removeEventListener('click', playTheGame)
+  setTimeout(function() {
+    ticTacToe.resetGrid();
+    restartGame();
+  }, 2000);
+}
+
+function newWin () {
+  if (ticTacToe.winner === ticTacToe.playerOne.id) {
+    displayWinner(ticTacToe.playerOne.id);
+  } else if (ticTacToe.winner === ticTacToe.playerTwo.id) {
+    displayWinner(ticTacToe.playerTwo.id);
+  } else {
     displayDraw();
   }
+}
 
-function displayWinner() {
-  if (ticTacToe.winner === ticTacToe.playerOne) {
-    gameStatus.innerText = `${ticTacToe.playerOne.id} wins!`
-    timer();
-  } else if (ticTacToe.winner === ticTacToe.playerTwo) {
-    gameStatus.innerText = `${ticTacToe.playerTwo.id} wins!`
-    timer();
+function show() {
+  displayPlayerTurn.innerText = `
+  It's ${ticTacToe.activePlayer.id} turn!
+`
   }
-}
 
-function displayActivePlayer() {
-  displayPlayerTurn.innerText = `It's ${ticTacToe.activePlayer.id}'s turn!`
-}
-
-function updatePlayerWins() {
+function updateWinCount() {
   firstPlayerScore.innerHTML = `
   <h1>${ticTacToe.playerOne.wins}</h1>
 `
@@ -58,26 +70,18 @@ function updatePlayerWins() {
 
 function displayDraw() {
   if (ticTacToe.draw === true) {
-    gameStatus.innerText = 'Tie!'
-    timer();
+    displayPlayerTurn.innerText = `Tie!`
+    setTimeout(function() {
+      ticTacToe.resetGrid();
+      restartGame();
+    }, 2000);
   }
 }
 
 function restartGame() {
   for (var i = 0; i < gameGridSpaces.length; i++) {
     gameGridSpaces[i].innerHTML = ``
-    gameStatus.innerText = ''
-    ticTacToe.draw = false;
-    ticTacToe.winner = null;
+    gameGrid.addEventListener('click', playTheGame)
+    displayPlayerTurn.innerText = `It's ${ticTacToe.activePlayer.id} turn!`
   }
-}
-
-function timer() {
-  setTimeout(function() {
-    restartGame();
-  }, 2000);
-}
-
-function show(element) {
-  element.classList.remove('hidden');
 }
