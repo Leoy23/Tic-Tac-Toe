@@ -20,67 +20,65 @@ class Game {
   updateActivePlayer() {
     if (this.activePlayer === this.playerOne) {
       this.activePlayer = this.playerTwo
-    } else {
+    } else if (this.activePlayer === this.playerTwo) {
       this.activePlayer = this.playerOne
     }
   }
 
   trackBoardData(anyIndex) {
-    if (this.gameBoard[anyIndex] === '') {
-      if (this.activePlayer === this.playerOne) {
-        this.gameBoard[anyIndex] = this.playerOne.token
-      }
-      if (this.activePlayer === this.playerTwo) {
-        this.gameBoard[anyIndex] = this.playerTwo.token
-      }
+  if (this.gameBoard[anyIndex] !== '' || anyIndex < 0 || anyIndex > 8) {
+    return
+  }
+    if (this.activePlayer === this.playerOne) {
+      this.gameBoard[anyIndex] = this.playerOne.token
     }
+    if (this.activePlayer === this.playerTwo) {
+      this.gameBoard[anyIndex] = this.playerTwo.token
+    }
+      this.checkForWin();
+      this.detectDraw();
+      this.updateActivePlayer();
   }
 
   checkForWin() {
-    for (var i = 0; i < this.gameBoard.length; i++) {
-      if (this.gameBoard[0] === this.gameBoard[1] && this.gameBoard[1] === this.gameBoard[2] && this.gameBoard[2] !== "") {
+      if (this.gameBoard[0] === this.gameBoard[1] && this.gameBoard[1] === this.gameBoard[2] && this.gameBoard[2]) {
         this.win();
-      } else if (this.gameBoard[3] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[5] && this.gameBoard[5] !== "") {
+      } else if (this.gameBoard[3] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[5] && this.gameBoard[5]) {
         this.win();
-      } else if (this.gameBoard[6] === this.gameBoard[7] && this.gameBoard[7] === this.gameBoard[8] && this.gameBoard[8] !== "") {
+      } else if (this.gameBoard[6] === this.gameBoard[7] && this.gameBoard[7] === this.gameBoard[8] && this.gameBoard[8]) {
         this.win();
-      } else if (this.gameBoard[0] === this.gameBoard[3] && this.gameBoard[3] === this.gameBoard[6] && this.gameBoard[6] !== "") {
+      } else if (this.gameBoard[0] === this.gameBoard[3] && this.gameBoard[3] === this.gameBoard[6] && this.gameBoard[6]) {
         this.win();
-      } else if (this.gameBoard[1] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[7] && this.gameBoard[7] !== "") {
+      } else if (this.gameBoard[1] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[7] && this.gameBoard[7]) {
         this.win();
-      } else if (this.gameBoard[2] === this.gameBoard[5] && this.gameBoard[5] === this.gameBoard[8] && this.gameBoard[8] !== "") {
+      } else if (this.gameBoard[2] === this.gameBoard[5] && this.gameBoard[5] === this.gameBoard[8] && this.gameBoard[8]) {
         this.win()
-      } else if (this.gameBoard[2] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[6] && this.gameBoard[6] !== "") {
+      } else if (this.gameBoard[2] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[6] && this.gameBoard[6]) {
         this.win();
-      } else if (this.gameBoard[0] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[8] && this.gameBoard[8] !== "") {
+      } else if (this.gameBoard[0] === this.gameBoard[4] && this.gameBoard[4] === this.gameBoard[8] && this.gameBoard[8]) {
         this.win();
-      } else {
-        this.detectDraw();
-      }
     }
   }
 
   win() {
     if (this.activePlayer === this.playerOne) {
       this.playerOne.increaseWins();
-      this.winner = this.playerOne;
-    }
-    if (this.activePlayer === this.playerTwo) {
+      this.winner = this.playerOne.id;
+    } else if (this.activePlayer === this.playerTwo) {
       this.playerTwo.increaseWins();
-      this.winner = this.playerTwo;
+      this.winner = this.playerTwo.id;
     }
-    this.resetGrid();
   }
 
   detectDraw() {
-    if (!this.gameBoard.includes("")) {
+    if (!this.gameBoard.includes("") && !this.winner) {
       this.draw = true;
-      this.resetGrid();
     }
   }
 
   resetGrid() {
     this.gameBoard = ["", "", "", "", "", "", "", "", ""];
-    this.setStartingPlayer();
+    this.draw = false;
+    this.winner = null;
   }
 }
