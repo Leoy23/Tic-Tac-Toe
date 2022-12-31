@@ -1,5 +1,6 @@
 
 # Tic-Tac-Toe
+<a href="https://tic-tac-toe-nu-plum.vercel.app/"> Deployed Link </a>
 
 ## Overview:
 
@@ -22,10 +23,17 @@ Utilizing HTML, CSS and JavaScript, I was able to create a fun game of Tic-Tac-T
 
 # ENJOY!
 
-![Mario and Luigi Tic-Tac-Toe game](./assets/Tic-Tac-Toe-home.png)
+![Mario and Luigi Tic-Tac-Toe game](./assets/game-main.png)
 
 
 ---------
 
 
-![Mario and Luigi Tic-Tac-Toe game](./assets/Tic-Tac-Toe-game.png)
+![Tic-Tac-Toe game play](./assets/game-play.png)
+
+
+
+---------
+
+
+![Tic-Tac-Toe game tie](./assets/game-tie.png)
