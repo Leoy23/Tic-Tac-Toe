@@ -23,17 +23,16 @@ Utilizing HTML, CSS and JavaScript, I was able to create a fun game of Tic-Tac-T
 
 # ENJOY!
 
-![Mario and Luigi Tic-Tac-Toe game](./assets/game-main.png)
-
-
----------
-
-
-![Tic-Tac-Toe game play](./assets/game-play.png)
+<img width="1440" alt="Screenshot 2022-12-31 at 2 13 54 AM" src="https://user-images.githubusercontent.com/106054421/210131624-a85cfb17-8137-455a-9dd9-0f1215f12eab.png">
 
 
 
 ---------
 
+<img width="1440" alt="Screenshot 2022-12-31 at 2 14 10 AM" src="https://user-images.githubusercontent.com/106054421/210131626-e5663c9c-4906-4319-8d9b-3cccf31c0f69.png">
 
-![Tic-Tac-Toe game tie](./assets/game-tie.png)
+
+
+---------
+
+<img width="1440" alt="Screenshot 2022-12-31 at 2 14 24 AM" src="https://user-images.githubusercontent.com/106054421/210131628-22a22abc-a76b-4850-a267-a47a91b4d913.png">
