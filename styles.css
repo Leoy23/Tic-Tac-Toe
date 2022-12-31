@@ -3,19 +3,24 @@
 * {
   font-family: 'Righteous', cursive;
 }
+html {
+height: 100vh;
+width: 100vw;
+margin: 0;
+}
+
 
 body {
   display: flex;
-  justify-content: space-evenly;
-  flex-direction: row;
+  justify-content: space-between;
   background-image: url("./assets/mario-luigi.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
-  width: 100vw;
   margin: 0;
+  overflow: hidden;
 }
+
 
 
 /* ***** FONT COLORS & BACKGROUND COLORS ***** */
@@ -24,7 +29,7 @@ body {
   background-color: transparent;
 }
 
-h1 {
+h1, h3 {
   color: #FFFFFF;
 }
 
@@ -68,46 +73,60 @@ h1 {
 
 .luigi-first-player,
 .mario-second-player {
-  height: 150px;
-  width: 150px;
+  height: 5rem;
+  width: 5rem;
 }
 
 h1 {
-  font-size: 3em;
-  text-shadow: 15px 15px 25px #DA8A97;
+  text-shadow: 8px 10px 12px #DA8A97;
 }
 
 .main-game-container {
   display: flex;
-  flex-direction: column;
   justify-content: center;
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* width: 6; */
+  height: 100vh;
+}
+
+.title-and-msg-box {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  width: 60%;
-  height: 100%;
+  margin-top: -3rem;
+  text-align: center;
+  background-color: #DA8A97;
+  border: .5rem solid #D96067;
+  padding: 1rem;
+  position: absolute;
 }
 
 .title {
-  display: flex;
-  justify-content: center;
   text-shadow: 15px 15px 25px #DC7179;
-  font-size: 90px;
+  font-size: 5rem;
+}
+.players-turn {
+  position: absolute;
+  /* margin-top: 12rem; */
 }
 
 .game {
   display: grid;
-  justify-content: center;
-  grid-template-columns: 160px 160px 160px;
-  grid-template-rows: 160px 160px 160px;
-  margin-top: 10px;
-  text-align: center;
+  grid-template-columns: 120px 120px 120px;
+  grid-template-rows: 120px 120px 120px;
+  height: fit-content;
+  margin-top: 21rem;
   border: 3px solid #E3838F;
 }
 .space {
   display: grid;
   justify-content: center;
-  border-top: 2px solid #DA8A97;
-  border-bottom: 2px solid #DA8A97;
-  border-left: 2px solid #DA8A97;
-  border-right: 2px solid #DA8A97;
+  border-top: 1rem solid #DA8A97;
+  border-bottom: 1rem solid #DA8A97;
+  border-left: 1rem solid #DA8A97;
+  border-right: 1rem solid #DA8A97;
   opacity: 0.8;
 }

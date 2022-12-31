@@ -55,7 +55,7 @@ function newWin () {
 
 function show() {
   displayPlayerTurn.innerText = `
-  It's ${ticTacToe.activePlayer.id} turn!
+  It's ${ticTacToe.activePlayer.id}'s turn!
 `
   }
 
@@ -82,6 +82,6 @@ function restartGame() {
   for (var i = 0; i < gameGridSpaces.length; i++) {
     gameGridSpaces[i].innerHTML = ``
     gameGrid.addEventListener('click', playTheGame)
-    displayPlayerTurn.innerText = `It's ${ticTacToe.activePlayer.id} turn!`
+    displayPlayerTurn.innerText = `It's ${ticTacToe.activePlayer.id}'s turn!`
   }
 }

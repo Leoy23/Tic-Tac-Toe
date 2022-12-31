@@ -71,7 +71,7 @@ class Game {
   }
 
   detectDraw() {
-    if (!this.gameBoard.includes("") && !this.winner) {
+    if (!this.winner && !this.gameBoard.includes("")) {
       this.draw = true;
     }
   }
