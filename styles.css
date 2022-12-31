@@ -1,132 +1,158 @@
-/* ***** MAIN LAYOUT ***** */
-
 * {
   font-family: 'Righteous', cursive;
 }
+
+
 html {
-height: 100vh;
-width: 100vw;
-margin: 0;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
 }
 
-
 body {
-  display: flex;
-  justify-content: space-between;
   background-image: url("./assets/mario-luigi.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  margin: 0;
   overflow: hidden;
 }
 
-
-
-/* ***** FONT COLORS & BACKGROUND COLORS ***** */
-
-.player-space {
-  background-color: transparent;
+.player-box {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
 }
 
-h1, h3 {
+.icon {
+  height: 6rem;
+  width: 6rem;
+}
+
+.player-one-score, .player-two-score {
+  background-color: #D96067;
+  border-radius: 1rem;
+  padding: 4rem;
+}
+
+
+h1, .players-turn {
   color: #FFFFFF;
 }
 
-.main-game-container {
-  background-color: transparent;
-}
 
 .space {
   background-color: #DC7179;
 }
 
-/* ***** GAME LAYOUT ***** */
-
-.player-space {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  height: 100vh;
-}
-
-.player-one-score,
-.player-two-score {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 25%;
-  width: 115%;
-  background: #D96067;
-  border-radius: 200px;
-  opacity: 0.9;
-}
 
 #player-one,
 #player-two {
-  display: flex;
-  flex-direction: column;
-  width: 14.5vw;
-  margin-bottom: auto;
-}
-
-.luigi-first-player,
-.mario-second-player {
-  height: 5rem;
-  width: 5rem;
+  /* padding: 1rem; */
 }
 
 h1 {
   text-shadow: 8px 10px 12px #DA8A97;
 }
 
-.main-game-container {
-  display: flex;
-  justify-content: center;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: center; */
-  /* align-items: center; */
-  /* width: 6; */
-  height: 100vh;
-}
-
 .title-and-msg-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: -3rem;
-  text-align: center;
-  background-color: #DA8A97;
   border: .5rem solid #D96067;
+  background-color: #DA8A97;
   padding: 1rem;
-  position: absolute;
+  border-radius: 2rem;
+
 }
 
 .title {
   text-shadow: 15px 15px 25px #DC7179;
   font-size: 5rem;
 }
+
+.game-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
 .players-turn {
   position: absolute;
-  /* margin-top: 12rem; */
+  margin-top: -3rem;
+  margin-right: 3rem;
+  text-align: center;
 }
 
 .game {
   display: grid;
-  grid-template-columns: 120px 120px 120px;
-  grid-template-rows: 120px 120px 120px;
-  height: fit-content;
-  margin-top: 21rem;
-  border: 3px solid #E3838F;
+  justify-content: center;
+  grid-template-columns: 90px 90px 90px;
+  grid-template-rows: 90px 90px 90px;
+  padding: 5rem;
 }
+
+
 .space {
   display: grid;
-  justify-content: center;
-  border-top: 1rem solid #DA8A97;
-  border-bottom: 1rem solid #DA8A97;
-  border-left: 1rem solid #DA8A97;
-  border-right: 1rem solid #DA8A97;
+  align-items: center;
+  justify-items: center;
+  border-top: .25rem solid #DA8A97;
+  border-bottom: .25rem solid #DA8A97;
+  border-left: .25rem solid #DA8A97;
+  border-right: .25rem solid #DA8A97;
   opacity: 0.8;
+}
+
+@media (max-width: 375px) {
+  html {
+    overflow: hidden;
+  }
+  
+  body {
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .game {
+    grid-template-columns: 4rem 4rem 4rem;
+    grid-template-rows: 4rem 4rem 4rem;
+    margin-top: 2rem;
+  }
+
+  .title-and-msg-box {
+    display: flex;
+    border: .25rem solid #D96067;
+    border-radius: 2rem;
+  }
+
+  .title {
+    font-size: small;
+  }
+
+  .game-msg {
+   /* text-align: center; */
+
+  }
+
+  .icon {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .players-turn {
+    margin-top: 14rem;
+    margin-right: 5rem;
+    border: .25rem solid #D96067;
+    border-radius: 2rem;
+    background-color: #DA8A97;
+    padding: .5rem;
+    /* font-size: 1rem;
+    text-align: center;
+    padding: .5rem; */
+  }
+
+  .player-one-score, .player-two-score {
+    padding: 2rem;
+    /* height: 3rem;
+    width: 3rem; */
+  }
 }

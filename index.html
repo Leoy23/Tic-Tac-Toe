@@ -10,15 +10,23 @@
     <meta charset="UTF-8">
   </head>
   <body>
-    <section class="player-space" id="player-one">
-      <img class="luigi-first-player" src="assets/icons8-luigi.svg" alt="luigi icon" />
-      <div class="player-one-score"></div>
-    </section>
-    <main class="main-game-container">
+    <div class="player-box">
+      <section class="player-space" id="player-one">
+        <img class="luigi-first-player icon" src="assets/icons8-luigi.svg" alt="luigi icon" />
+        <div class="player-one-score"></div>
+      </section>
       <div class="title-and-msg-box">
           <h1 class="title">TIC-TAC-TOE</h1>
-          <h3 class="players-turn" id="players-token-icon"></h3>
-      </div>
+          <div class="game-msg">
+            <span class="players-turn" id="players-token-icon">Click any square to start!</span>
+          </div>
+        </div>
+      <section class="player-space" id="player-two">
+        <img class="mario-second-player icon" src="assets/icons8-super-mario.svg" alt="super mario icon" />
+        <div class="player-two-score"></div>
+      </section>
+    </div>
+      <main class="main-game-container">
       <div class="game">
         <div class="space" id="0"></div>
         <div class="space" id="1"></div>
@@ -31,10 +39,6 @@
         <div class="space" id="8"></div>
       </div>
     </main>
-      <section class="player-space" id="player-two">
-        <img class="mario-second-player" src="assets/icons8-super-mario.svg" alt="super mario icon" />
-        <div class="player-two-score"></div>
-      </section>
       <script type="text/javascript" src="player.js"></script>
       <script type="text/javascript" src="game.js"></script>
       <script type="text/javascript" src="main.js"></script>
