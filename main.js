@@ -61,10 +61,10 @@ function show() {
 
 function updateWinCount() {
   firstPlayerScore.innerHTML = `
-  <h1>${ticTacToe.playerOne.wins}</h1>
+  ${ticTacToe.playerOne.wins}
 `
   secondPlayerScore.innerHTML = `
-  <h1>${ticTacToe.playerTwo.wins}</h1>
+  ${ticTacToe.playerTwo.wins}
 `
 }
 

@@ -1,27 +1,27 @@
-* {
-  font-family: 'Righteous', cursive;
-}
-
-
 html {
+  color: white;
+  font-family: "Righteous", cursive;
   height: 100vh;
-  width: 100vw;
   margin: 0;
+  width: 100vw;
 }
 
 body {
   background-image: url("./assets/mario-luigi.jpg");
+  background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
   overflow: hidden;
 }
 
+h1 {
+  text-shadow: 3px 8px 15px #d07f8c;
+}
+
 .player-box {
-  display: flex;
   align-items: center;
-  justify-content: space-evenly;
-  text-align: center;
+  display: flex;
+  justify-content: space-around;
 }
 
 .icon {
@@ -29,129 +29,93 @@ body {
   width: 6rem;
 }
 
-.player-one-score, .player-two-score {
-  background-color: #D96067;
+#player-one,
+#player-two {
+  padding: 3rem;
+}
+
+.player-one-score,
+.player-two-score {
+  background-color: #d96067;
   border-radius: 1rem;
   padding: 4rem;
+  font-size: 1.5rem;
 }
 
-
-h1, .players-turn {
-  color: #FFFFFF;
-}
-
-
-.space {
-  background-color: #DC7179;
-}
-
-
-h1 {
-  text-shadow: 8px 10px 12px #DA8A97;
-}
-
-.title-and-msg-box {
-  border: .5rem solid #D96067;
-  background-color: #DA8A97;
-  padding: 1rem;
-  border-radius: 2rem;
-
-}
-
-.title {
-  text-shadow: 15px 15px 25px #DC7179;
-  font-size: 5rem;
-}
-
-.game-msg {
+.player-space {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
 }
 
-
-.players-turn {
-  position: absolute;
-  margin-top: -3rem;
-  margin-right: 3rem;
+.title-and-msg-box {
+  background-color: #da8a97;
+  border: 0.5rem solid #d96067;
+  border-radius: 2rem;
+  padding: 1rem;
+  position: relative;
   text-align: center;
+}
+
+.title {
+  font-size: 5rem;
+  text-shadow: 15px 15px 25px #dc7179;
 }
 
 .game {
   display: grid;
-  justify-content: center;
   grid-template-columns: 90px 90px 90px;
   grid-template-rows: 90px 90px 90px;
+  justify-content: center;
   padding: 5rem;
 }
 
-
 .space {
-  display: grid;
   align-items: center;
+  background-color: #dc7179;
+  border-bottom: 0.25rem solid #da8a97;
+  border-left: 0.25rem solid #da8a97;
+  border-right: 0.25rem solid #da8a97;
+  border-top: 0.25rem solid #da8a97;
+  display: grid;
   justify-items: center;
-  border-top: .25rem solid #DA8A97;
-  border-bottom: .25rem solid #DA8A97;
-  border-left: .25rem solid #DA8A97;
-  border-right: .25rem solid #DA8A97;
   opacity: 0.8;
 }
 
-@media (max-width: 375px) {
-  html {
-    overflow: hidden;
-  }
-  
-  body {
-    background-size: cover;
-    height: 100vh;
+@media (max-width: 844px) {
+  .mario-second-player,
+  .luigi-first-player {
+    height: 2rem;
+    width: 2rem;
   }
 
-  .game {
-    grid-template-columns: 4rem 4rem 4rem;
-    grid-template-rows: 4rem 4rem 4rem;
-    margin-top: 2rem;
-  }
-
-  .title-and-msg-box {
-    display: flex;
-    border: .25rem solid #D96067;
-    border-radius: 2rem;
+  .icon {
+    height: 5rem;
+    width: 5rem;
   }
 
   .title {
-    font-size: small;
+    font-size: 2rem;
   }
 
-
-  .icon {
-    height: 4rem;
-    width: 4rem;
-  }
-
-  .players-turn {
-    margin-top: 14rem;
-    margin-right: 5rem;
-    border: .25rem solid #D96067;
-    border-radius: 2rem;
-    background-color: #DA8A97;
-    padding: .5rem;
-  }
-
-  .player-one-score, .player-two-score {
+  .player-one-score,
+  .player-two-score {
     padding: 2rem;
+  }
+
+  .game {
+    padding: 1rem;
+    grid-template-columns: 3.5rem 3.5rem 3.5rem;
+    grid-template-rows: 3.5rem 3.5rem 3.5rem;
   }
 }
 
 @media (max-width: 430px) {
+  html {
+    margin: 0;
+  }
   .player-box {
     justify-content: flex-start;
-  }
-
-  html {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
   }
 
   .title-and-msg-box {
@@ -167,14 +131,63 @@ h1 {
   .players-turn {
     margin-right: -0%;
     margin-top: 2rem;
-    font-size: .70rem;
+    font-size: 0.7rem;
   }
 
-  .player-one-score, .player-two-score {
+  .player-one-score,
+  .player-two-score {
     padding: 2rem;
   }
 
-  #player-one, #player-two {
+  #player-one,
+  #player-two {
     padding: 1rem;
   }
- }
+}
+
+@media (max-width: 375px) {
+  html {
+    overflow: hidden;
+  }
+
+  body {
+    background-size: cover;
+    height: 100vh;
+  }
+
+  .game {
+    grid-template-columns: 4rem 4rem 4rem;
+    grid-template-rows: 4rem 4rem 4rem;
+  }
+
+  .title {
+    font-size: 1.75rem;
+  }
+
+  .icon {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .players-turn {
+    margin-top: -1.5rem;
+  }
+
+  .player-one-score,
+  .player-two-score {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .players-turn {
+    position: relative;
+  }
+}
+
+@media (max-width: 184px) {
+  .game {
+    grid-template-columns: 1.5rem 1.5rem 1.5rem;
+    grid-template-rows: 1.5rem 1.5rem 1.5rem;
+  }
+}
