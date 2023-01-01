@@ -46,11 +46,6 @@ h1, .players-turn {
 }
 
 
-#player-one,
-#player-two {
-  /* padding: 1rem; */
-}
-
 h1 {
   text-shadow: 8px 10px 12px #DA8A97;
 }
@@ -128,10 +123,6 @@ h1 {
     font-size: small;
   }
 
-  .game-msg {
-   /* text-align: center; */
-
-  }
 
   .icon {
     height: 4rem;
@@ -145,14 +136,37 @@ h1 {
     border-radius: 2rem;
     background-color: #DA8A97;
     padding: .5rem;
-    /* font-size: 1rem;
-    text-align: center;
-    padding: .5rem; */
   }
 
   .player-one-score, .player-two-score {
     padding: 2rem;
-    /* height: 3rem;
-    width: 3rem; */
   }
 }
+
+@media (max-width: 428px) {
+  .player-box {
+    /* display: flex; */
+    /* justify-content: space-evenly; */
+    text-align: center;
+  }
+
+  .title-and-msg-box {
+    height: 9rem;
+    width: 9rem;
+  }
+
+  .title {
+    font-size: 2rem;
+    margin: 0;
+  }
+
+  .players-turn {
+    margin-right: -0%;
+    margin-top: 2rem;
+    font-size: .70rem;
+  }
+
+  .player-one-score, .player-two-score {
+    padding: 2rem;
+  }
+ }
