@@ -143,11 +143,14 @@ h1 {
   }
 }
 
-@media (max-width: 428px) {
+@media (max-width: 430px) {
   .player-box {
-    /* display: flex; */
-    /* justify-content: space-evenly; */
-    text-align: center;
+    justify-content: flex-start;
+  }
+
+  html {
+    height: 100vh;
+    width: 100vw;
   }
 
   .title-and-msg-box {
@@ -168,5 +171,9 @@ h1 {
 
   .player-one-score, .player-two-score {
     padding: 2rem;
+  }
+
+  #player-one, #player-two {
+    padding: 1rem;
   }
  }
